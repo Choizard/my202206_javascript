@@ -13,9 +13,15 @@
     </div>
     <script>
         document.querySelector("#makeBtn").addEventListener("click", function(){
+            
             let img=document.createElement("img");
+            // img 요소를 만들고 참조값을 img라는 변수에 담기
             img.setAttribute("src", "images/kim1.png");
+            // img.setAttribute("id", "one");
+            // img.setAttribute("alt", "김구라 이미지") 하나만 추가할 수 있는건 아니다
+            // src의 속성의 값 추가
             document.querySelector("#wrapper").append(img);
+            // id가 wrapper 인 요소의 자식요소로 추가
         });
     </script>
 </body>
