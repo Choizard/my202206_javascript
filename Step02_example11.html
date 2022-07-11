@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example11.html</title>
+</head>
+<body>
+    <h3>가위 바위 보 게임</h3>
+
+    <select id="mySelect">
+        <option value="">나 : 선택</option>
+        <option value="0">나 : 가위</option>
+        <option value="1">나 : 바위</option>
+        <option value="2">나 : 보</option>
+    </select>
+
+    <strong>vs</strong>
+
+    <select id="comSelect">
+        <option value="0">com : 가위</option>
+        <option value="1">com : 바위</option>
+        <option value="2">com : 보</option>
+    </select>
+    </body>
+    <p id="result"></p>
+    
+    <script>
+        /*
+            Step02_example9.html 을 참고해서 가위, 바위, 보 게임을 완성 시켜보세요
+            승리시 p 요소에 "이겼다"
+            패배시 p 요소에 "졌다"
+            비길시 p 요소에 "비겼다" 라고 출력이 되면 됩니다.
+        */
+
+        document.querySelector("#mySelect").addEventListener("change", function(){
+            let value=document.querySelector("#mySelect").value;
+
+            let ranNum=Math.floor(Math.random()*3);
+
+            document.querySelector("#comSelect").value=ranNum;
+
+            if(value == 0){ //만일 내가 가위를 냈을 때
+                if(ranNum == 0){
+                    document.querySelector("#result").innerText="비겼다";
+                }
+                if(ranNum == 1){
+                    document.querySelector("#result").innerText="졌다";
+                }
+                if(ranNum == 2){
+                    document.querySelector("#result").innerText="이겼다";
+                }
+            }else if(value == 1){ //아니면 내가 바위를 냈을 때
+                if(ranNum == 0){
+                    document.querySelector("#result").innerText="이겼다";
+                }
+                if(ranNum == 1){
+                    document.querySelector("#result").innerText="비겼다";
+                }
+                if(ranNum == 2){
+                    document.querySelector("#result").innerText="졌다";
+                }
+            }else if(value == 2){ // 아니면 내가 보를 냈을 때
+                if(ranNum == 0){
+                    document.querySelector("#result").innerText="졌다";
+                }
+                if(ranNum == 1){
+                    document.querySelector("#result").innerText="이겼다";
+                }
+                if(ranNum == 2){
+                    document.querySelector("#result").innerText="비겼다";
+                }
+            }
+
+        })
+        
+        
+    </script>
+</body>
+</html>

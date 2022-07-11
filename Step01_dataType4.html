@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType4.html</title>
+</head>
+<body>
+    <h1> javascript data type </h1>
+    <script>
+        //상품 하나의 정보라고 가정
+        //순서가 중요치 않은 데이터는 object type에 담으면 됨
+        let obj = {num : 1, name : "삼겹살", price : "10,000원"};
+        let obj2 = {name : "삼겹살", num : 2, price : "10,000원"};
+        
+        /*
+            내가 좋아하는 음식 목록
+            
+            삼겹살, 치킨, 김치찌개, 냉면, 햄버거
+        */
+        // array type (배열 type) : 순서가 중요한 데이터를 나열할 때
+        let foods = ["삼겹살", "치킨", "김치찌개", "냉면", "햄버거"];
+        
+        //배열의 특정 인덱스에 저장된 item을 변수에 담기
+        let a = foods[0];
+        let b = foods[1];
+
+        //배열의 특정 인덱스에item을 수정할 수 있음
+        foods[0]="라면";
+        foods[1]="짬뽕";
+
+        //배열의 크기 참조해서 변수에 담기
+        let size = foods.length; //안에 몇개가 들어있는지
+
+        //배열에 item 추가하기 (한번에 여러개도 가능)
+        foods.push("피자");
+
+        //이미 있는 array 목록에서 splice(제외) 할 수도 있음
+        foods.splice(2,1);  // Ex) 2번째 인덱스로부터 1개 삭제
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType3.html</title>
+</head>
+<body>
+    <h1> javascript 데이터 type </h1>
+    <script>
+        /*
+            한명의 회원 정보라고 가정하고
+            번호, 이름, 남자인지 여부
+            1,김구라, ture
+        */
+
+        let num = 1;  // number type
+        let name = "김구라"; // string type
+        let isMan = true; // boolean type
+        
+        //하나의 변수명으로 여러개의 값을 한번에 관리 할 수는 없을까?
+        let men1 = {num : 1, name : "김구라", isMan : true}; // object type
+        let men2 = {num : 1, name : "김구라", isMan : true};
+        let men3 = {num : num, name : name, isMan : isMan};
+        let men5 = {num, name, isMan};  //위에 것 을 줄여서 이렇게 쓸 수도 있음
+
+        //object 에 저장된 값을 수정해보기
+        men2.num = 2;
+        men2.name = "해골";
+        men2.isMan = false;
+
+        //빈 object를 만들고 나중에 필요에 따라 값을 추가할 수 있다.
+        let men4 = {};
+        men4.num = 3;
+        men4.name = "원숭이";
+        men4.isMan = true;
+
+        // a 는 object type
+        let a = men1;
+        // b 는 number type
+        let b = men1.num; 
+        // c 는 string type
+        let c = men1.name;
+        // d  는 booleantype
+        let d = men1.isMan;
+
+    </script>
+</body>
+</html>

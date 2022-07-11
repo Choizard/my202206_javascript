@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example5.html</title>
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            border: 1px solid red;
+        }
+        .box:hover{ /* 클래스명이 box인 요소에 마우스가 hover (=맴돌때) 되었을 때 적용할 css */
+            background-color:yellow;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">div1</div>
+    <div class="box">div2</div>
+    <div class="box">div3</div>
+    <div class="box">div4</div>
+    <div class="box">div5</div>
+
+    <script>
+        box = document.querySelectorAll(".box")
+        /*마우스를 클릭(click, mousedown)한 div 의 innerText를 clicked로 바꾸는 프로그래밍 해보세용~*/
+        for(let i=0; i<box.length; i++){
+            
+            box[i].addEventListener("click", function(){
+                box[i].innerText = "clicked"
+            }
+        )};
+
+    </script>
+</body>
+</html>

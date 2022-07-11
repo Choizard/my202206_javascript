@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example.html</title>
+</head>
+<body>
+    <button id="plusBtn">증가</button> <span id="pamount"></span>
+    <br>
+    <button id="minusBtn">감소</button> <span id="mamount"></span>
+    <p id="console">0</p>
+    <script>
+
+        let count=0;  //global 영역에 만들어야 모든 함수에서 참조해서 쓸 수 있다.
+        let pamount=0;
+        let mamount = 0;
+        
+
+        document.querySelector("#plusBtn").addEventListener("click", function(){
+            // let count = count+1; 이렇게 작성하면 아래에 있는 함수에서 참조해서 쓸 수가 없다.
+            count = count+1;
+            pamount = pamount+1;
+            document.querySelector("#console").innerText=count+"px";
+            document.querySelector("#pamount").innerText=pamount;
+        });
+
+        document.querySelector("#minusBtn").addEventListener("click", function(){
+            count = count-1;
+            mamount = mamount-1;
+            document.querySelector("#console").innerText=count+"px";
+            document.querySelector("#mamount").innerText=mamount;
+        });
+
+    </script>
+</body>
+</html>

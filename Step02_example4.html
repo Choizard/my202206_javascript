@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example4.html</title>
+</head>
+<body>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+    <div>div6</div>
+    <div>div7</div>
+    <div>div8</div>
+    <div>div9</div>
+    <div>div10</div>
+    <button id="changeBtn">바꾸기</button>
+    <button id="changeBtn2">바꾸기2</button>
+    <button id="changeBtn3">바꾸기3</button>
+    <script>
+        let index = 0;
+
+        document.querySelector("#changeBtn").addEventListener("click", function(){
+
+            if(index<10){
+
+            // index = index+1; 여기에 놓으면 div2부터 변하기 시작하기때문에 뒤로 옮겨야함
+
+            let div = document.querySelectorAll("div");
+
+            div[index].innerText="김구라";
+
+            index = index+1;
+            }
+        });
+
+        document.querySelector("#changeBtn2").addEventListener("click", function(){
+
+            if(index==10){
+
+                return; //함수를 여기서 끝내라
+            }
+            let div = document.querySelectorAll("div");
+
+            div[index].innerText="김구라";
+
+            index = index+1;
+            
+        });
+
+        document.querySelector("#changeBtn3").addEventListener("click", function(){
+
+            if(index==document.querySelectorAll("div").length){
+
+                return;
+            }
+            let div = document.querySelectorAll("div");
+
+            div[index].innerText="김구라";
+
+            index = index+1;
+
+        });
+    </script>
+    
+</body>
+</html>

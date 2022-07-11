@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType6.html</title>
+</head>
+<body>
+    <h1> javascript data type </h1>
+    <button onclick="f1();">눌러보셈</button>
+    <script>
+        /*
+            특정 시점에 일괄 실행할 javascript를 미리 준비해놓기 위해서는
+            funtion type data가 필요하다    
+        */
+
+        // function type data를 만들어서 f1이라는 이름의 변수에 대입하기
+        let f1 = function() {        // {   } 안에 실행할 javascript를 모아놓으면 됨
+            console.log("하나");
+            console.log("두울");
+            console.log("세엣");
+        };   //콜(= 실행, 호출) 하려면 f1()  *호출은 함수만 가능하다*    *콜과 참조는 다른 개념임*
+                            //      * f1[= 참조]와  f1()[= 콜]을 꼭 구분!!!!! 중요중요 *
+        //f1 안에 들어있는 값을 참조
+        let f2 = f1;
+
+        let result = f1();
+
+
+    </script>
+</body>
+</html>

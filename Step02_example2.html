@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example2.html</title>
+    <style>
+        #kinImg{
+            transition: all 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <button id="rmoveBtn">오른쪽으로</button>
+    <button id="lmoveBtn">왼쪽으로</button>
+    <br>
+    <button id="rbmoveBtn">오른쪽 대각선으로</button>
+    <button id="reset">리셋</button>
+    <br>
+    <img src="images/kim1.png" id="kinImg">
+    <script>
+        /*
+            아래의 mLeft변수를 활용해서
+            움직이기 버튼을 누를 때마다 김구라 이미지의 왼쪽 마진을 10px 씩 증가시켜서
+            이미지가 우측으로 10px씩 움직이도록 프로그래밍 해보세용.
+            
+            himt)
+            .style.marginLeft = 왼쪽마진
+        */
+        //local 영역에서 공통으로 사용할 지역변수를 만들고 초기값 0 대입
+        let mLeft=0;
+        let mTop=0;
+        document.querySelector("#rmoveBtn").addEventListener("click", function(){
+            //변수에 있는 숫자를 10씩 증가
+            mLeft = mLeft + 100; // *여기서도*
+            //변수에 있는 숫자를 이미지의 왼쪽 마진에 적용
+            document.querySelector("#kinImg").style.marginLeft = mLeft+"px"; 
+        });
+
+        
+        document.querySelector("#lmoveBtn").addEventListener("click", function(){
+            if(mLeft != 0){ // 원래 자리까지만 움직이고싶을때
+            
+            mLeft = mLeft - 100;
+            
+            document.querySelector("#kinImg").style.marginLeft = mLeft+"px";
+            } 
+        });
+
+        document.querySelector("#rbmoveBtn").addEventListener("click", function(){
+            
+            mLeft = mLeft + 100;
+            mTop = mTop + 100;
+            
+            document.querySelector("#kinImg").style.marginLeft = mLeft+"px";
+            document.querySelector("#kinImg").style.marginTop = mTop+"px"; 
+        });
+
+        document.querySelector("#reset").addEventListener("click", function(){
+            //변수에 있는 숫자를 0으로 초기화
+            mLeft = 0; // *여기서도 사용가능*
+            mTop = 0;
+            document.querySelector("#kinImg").style.marginLeft = mLeft; // 0으로 초기화
+            document.querySelector("#kinImg").style.marginTop = mTop;
+        });
+
+        
+    </script>
+</body>
+</html>

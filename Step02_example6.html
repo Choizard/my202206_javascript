@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example6.html</title>
+    <style>
+        .kim{
+            width: 100px;
+            height:100px;
+            background-color:yellow;
+            transition: all 0.2s ease-in-out
+        }
+        .kim:hover{
+            cursor:pointer;
+            border:1px solid red;
+            }
+
+            
+    </style>
+</head>
+<body>
+    <img src="images/kim1.png" class="kim">
+    <img src="images/kim1.png" class="kim">
+    <img src="images/kim1.png" class="kim">
+    <img src="images/kim1.png" class="kim">
+    <img src="images/kim1.png" class="kim">
+    <script>
+        /*
+            클릭한 이미지의 width와 height를 각각 150으로 변경해보세용
+        */
+        let kim = document.querySelectorAll(".kim")
+
+        for(let i = 0; i<5; i++){
+            kim[i].addEventListener("click", function(){
+
+            kim[i].style.width = 500+"px";
+            kim[i].style.height = 500+"px";
+
+        })};
+        for(let i = 0; i<5; i++){
+            kim[i].addEventListener("mouseout", function(){
+                
+                kim[i].style.width = 100+"px";
+                kim[i].style.height = 100+"px";
+        })
+        };
+    </script>
+</body>
+</html>
